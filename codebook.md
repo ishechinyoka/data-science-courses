@@ -99,7 +99,10 @@ fBodyBodyGyroJerkMag-std | Fourier-transformed standard deviation of magnitude o
 
 So you may wonder: **How do I confirm the dimensions of the final dataset?**  Simply load this in R:
 
+~~~
 dt <- read.table("final-tidy-data.txt")
+~~~
+
 Then do:
 
 ~~~
