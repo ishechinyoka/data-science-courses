@@ -95,11 +95,22 @@ fBodyBodyGyroJerkMag-mean | Fourier-transformed mean of magnitude of jerk signal
 fBodyBodyGyroJerkMag-std | Fourier-transformed standard deviation of magnitude of jerk signal (derived by time) for body angular velocity
 
 
+## Conclusion
 
+So you may wonder: **How do I confirm the dimensions of the final dataset?**  Simply load this in R:
 
+dt <- read.table("final-tidy-data.txt")
+Then do:
 
+~~~
+dim(dt)
+~~~
 
+And you will get the result that the data frame has 1 row and 68 columns.
 
+Since the R script does an aggregation calculation across all the subjects, it therefore follows that:
 
-
+- The first two columns which contain identification variables (**SubjectNumber** and **Activity**) are empty. This is because they are categorical and cannot be computed for their mean or standard deviation summaries.
+- Data will only be in columns 3-68, which are measurable variables (quantitative) whose values can be expressed as mean or standard deviations. and
+- There is only one row (observation) as this is an aggregate of all the 30 participants in the initial experiment.
 
